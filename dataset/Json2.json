@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "bakery.json",
+				"fileName": "Weather_hyd.json",
 				"folderPath": "weatherdata",
 				"container": "dfzgeneral2"
 			}
