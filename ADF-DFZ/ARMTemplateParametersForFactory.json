@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-DFZ"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "https://api.openweathermap.org/data/2.5/weather?q=Hyderabad&appid=5d6438577cb19ef8514a810c6cd3ac00"
+		}
+	}
+}
