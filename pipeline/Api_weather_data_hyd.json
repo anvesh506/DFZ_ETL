@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Api_weather_data_hyd",
 	"properties": {
 		"activities": [
 			{
