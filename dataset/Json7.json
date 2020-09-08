@@ -10,7 +10,23 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "weatherdata"
+				"fileName": "Bakery.json",
+				"container": "dfzgeneral2"
+			},
+			"format": {
+				"type": "JsonFormat",
+				"filePattern": "arrayOfObject",
+				"JsonNodeReference": "['result']",
+				"JsonPathDefination": {
+					"id": "'['id']",
+					"type": "['type']",
+					"name": "['name']",
+					"ppu": "['ppu']",
+					"batters_batter_id": "['batters']['batter']['id']",
+					"batters_batter_type": "['batters']['batter']['type']",
+					"topping_id": "['topping']['id']",
+					"topping_type": "['topping']['type']"
+				}
 			}
 		}
 	}
