@@ -10,10 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "tgt_gile",
-					"type": "Expression"
-				},
+				"fileName": "tgt_flattern",
 				"container": "dfzgeneral2"
 			},
 			"columnDelimiter": ",",
