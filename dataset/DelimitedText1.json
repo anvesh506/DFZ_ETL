@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "json_flattern-00001",
 				"container": "dfzgeneral2"
 			},
 			"columnDelimiter": ",",
