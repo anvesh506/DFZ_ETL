@@ -27,14 +27,6 @@
 					"topping_id": "['topping']['id']",
 					"topping_type": "['topping']['type']"
 				}
-			},
-			"finename": {
-				"value": "@CONCAT(dataset().FileName,'.json')",
-				"type": "Expression"
-			},
-			"folderpath": {
-				"value": "@dataset().Container",
-				"type": "Expression"
 			}
 		}
 	}
