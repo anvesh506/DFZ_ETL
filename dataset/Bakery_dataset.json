@@ -22,61 +22,19 @@
 					"type": "['type']",
 					"name": "['name']",
 					"ppu": "['ppu']",
-					"batters_batter_id": "['batters']['batter']['id']",
-					"batters_batter_type": "['batters']['batter']['type']",
+					"batters_batter_id": "['batter']['id']",
+					"batters_batter_type": "['batter']['type']",
 					"topping_id": "['topping']['id']",
 					"topping_type": "['topping']['type']"
 				}
-			}
-		},
-		"schema": {
-			"type": "object",
-			"properties": {
-				"id": {
-					"type": "string"
-				},
-				"type": {
-					"type": "string"
-				},
-				"name": {
-					"type": "string"
-				},
-				"ppu": {
-					"type": "number"
-				},
-				"batters": {
-					"type": "object",
-					"properties": {
-						"batter": {
-							"type": "array",
-							"items": {
-								"type": "object",
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"type": {
-										"type": "string"
-									}
-								}
-							}
-						}
-					}
-				},
-				"topping": {
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"id": {
-								"type": "string"
-							},
-							"type": {
-								"type": "string"
-							}
-						}
-					}
-				}
+			},
+			"finename": {
+				"value": "@CONCAT(dataset().FileName,'.json')",
+				"type": "Expression"
+			},
+			"folderpath": {
+				"value": "@dataset().Container",
+				"type": "Expression"
 			}
 		}
 	}

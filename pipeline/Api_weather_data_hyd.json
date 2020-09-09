@@ -18,9 +18,8 @@
 					"source": {
 						"type": "JsonSource",
 						"storeSettings": {
-							"type": "HttpReadSettings",
-							"requestMethod": "POST",
-							"requestTimeout": ""
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
 						},
 						"formatSettings": {
 							"type": "JsonReadSettings"
@@ -32,14 +31,67 @@
 							"type": "AzureBlobStorageWriteSettings"
 						},
 						"formatSettings": {
-							"type": "JsonWriteSettings"
+							"type": "JsonWriteSettings",
+							"filePattern": "arrayOfObjects"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['id']"
+								}
+							},
+							{
+								"source": {
+									"path": "['type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ppu']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['topping'][0]['id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['topping'][0]['type']"
+								}
+							}
+						],
+						"collectionReference": "$['batters']['batter']"
+					}
 				},
 				"inputs": [
 					{
-						"referenceName": "Weather_dataset",
+						"referenceName": "Bakery_dataset",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Bakery_dataset",
 						"type": "DatasetReference"
 					}
 				]
