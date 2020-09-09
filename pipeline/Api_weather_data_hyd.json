@@ -39,13 +39,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Json1",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "Json2",
+						"referenceName": "Weather_dataset",
 						"type": "DatasetReference"
 					}
 				]
