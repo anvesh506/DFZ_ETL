@@ -13,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "dfzgeneral2//Bakery.json"
+					},
+					{
+						"name": "Destination",
+						"value": "dfzgeneral2//Bakery_test.json"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "JsonSource",
@@ -32,13 +41,23 @@
 						},
 						"formatSettings": {
 							"type": "JsonWriteSettings",
-							"filePattern": "arrayOfObjects"
+							"filePattern": "setOfObjects"
 						}
 					},
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
+							{
+								"source": {
+									"path": "$['topping'][0]['id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['topping'][0]['type']"
+								}
+							},
 							{
 								"source": {
 									"path": "['id']"
@@ -68,16 +87,6 @@
 								"source": {
 									"path": "$['ppu']"
 								}
-							},
-							{
-								"source": {
-									"path": "$['topping'][0]['id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['topping'][0]['type']"
-								}
 							}
 						],
 						"collectionReference": "$['batters']['batter']"
@@ -91,7 +100,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Bakery_dataset",
+						"referenceName": "Json4",
 						"type": "DatasetReference"
 					}
 				]
