@@ -16,12 +16,8 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "xlsx_input_files",
-						"type": "DatasetReference",
-						"parameters": {
-							"File_name": "''",
-							"sheet_name": "'Sheet1'"
-						}
+						"referenceName": "file_list_ext",
+						"type": "DatasetReference"
 					},
 					"fieldList": [
 						"childItems"
