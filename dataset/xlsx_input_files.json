@@ -8,11 +8,19 @@
 		"parameters": {
 			"File_name": {
 				"type": "string"
+			},
+			"sheet_name": {
+				"type": "string",
+				"defaultValue": "'Sheet1'"
 			}
 		},
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": {
+				"value": "@dataset().sheet_name",
+				"type": "Expression"
+			},
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
