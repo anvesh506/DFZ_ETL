@@ -9,27 +9,27 @@
 						"referenceName": "Bakery_dataset",
 						"type": "DatasetReference"
 					},
-					"name": "Json_out"
+					"name": "Jsonout"
 				}
 			],
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText1",
+						"referenceName": "Bakery_sink",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "Blobstorage"
 				}
 			],
 			"transformations": [
 				{
-					"name": "Batter_flatten"
+					"name": "Batterflatten"
 				},
 				{
-					"name": "Topping_flaten"
+					"name": "Toppingflaten"
 				}
 			],
-			"script": "source(output(\n\t\tid as string,\n\t\ttype as string,\n\t\tname as string,\n\t\tppu as double,\n\t\tbatters as (batter as (id as string, type as string)[]),\n\t\ttopping as (id as string, type as string)[]\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tsingleDocument: true) ~> Json_out\nJson_out foldDown(unroll(batters.batter),\n\tmapColumn(\n\t\tid,\n\t\ttype,\n\t\tname,\n\t\tppu,\n\t\tBatters_id = batters.batter.id,\n\t\tBatters_type = batters.batter.type,\n\t\ttopping\n\t),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Batter_flatten\nBatter_flatten foldDown(unroll(topping),\n\tmapColumn(\n\t\tid,\n\t\ttype,\n\t\tname,\n\t\tppu,\n\t\tBatters_id,\n\t\tBatters_type,\n\t\ttopping_id = topping.id,\n\t\ttopping_type = topping.type\n\t),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Topping_flaten\nTopping_flaten sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tfilePattern:'json_flattern',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+			"script": "source(output(\n\t\tid as string,\n\t\ttype as string,\n\t\tname as string,\n\t\tppu as double,\n\t\tbatters as (batter as (id as string, type as string)[]),\n\t\ttopping as (id as string, type as string)[]\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tsingleDocument: true) ~> Jsonout\nJsonout foldDown(unroll(batters.batter),\n\tmapColumn(\n\t\tid,\n\t\ttype,\n\t\tname,\n\t\tppu,\n\t\tBatters_id = batters.batter.id,\n\t\tBatters_type = batters.batter.type,\n\t\ttopping\n\t),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Batterflatten\nBatterflatten foldDown(unroll(topping),\n\tmapColumn(\n\t\tid,\n\t\ttype,\n\t\tname,\n\t\tppu,\n\t\tBatters_id,\n\t\tBatters_type,\n\t\ttopping_id = topping.id,\n\t\ttopping_type = topping.type\n\t),\n\tskipDuplicateMapInputs: false,\n\tskipDuplicateMapOutputs: false) ~> Toppingflaten\nToppingflaten sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tfilePattern:'json_flattern',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Blobstorage"
 		}
 	}
 }
