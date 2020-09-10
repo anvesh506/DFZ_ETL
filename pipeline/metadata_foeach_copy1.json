@@ -47,67 +47,17 @@
 					"isSequential": false,
 					"activities": [
 						{
-							"name": "Copy data1",
-							"type": "Copy",
+							"name": "variable_append",
+							"type": "AppendVariable",
 							"dependsOn": [],
-							"policy": {
-								"timeout": "7.00:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
 							"userProperties": [],
 							"typeProperties": {
-								"source": {
-									"type": "ExcelSource",
-									"storeSettings": {
-										"type": "AzureBlobStorageReadSettings",
-										"recursive": true
-									}
-								},
-								"sink": {
-									"type": "DelimitedTextSink",
-									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings"
-									},
-									"formatSettings": {
-										"type": "DelimitedTextWriteSettings",
-										"quoteAllText": true,
-										"fileExtension": ".csv"
-									}
-								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
+								"variableName": "File_list",
+								"value": {
+									"value": "@item().name",
+									"type": "Expression"
 								}
-							},
-							"inputs": [
-								{
-									"referenceName": "xlsx_input_files",
-									"type": "DatasetReference",
-									"parameters": {
-										"file_name": {
-											"value": "@item()",
-											"type": "Expression"
-										}
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "bakery_tgt_csv_conn",
-									"type": "DatasetReference",
-									"parameters": {
-										"tgt_file_name": "'bakery_file1.csv'"
-									}
-								}
-							]
+							}
 						}
 					]
 				}
