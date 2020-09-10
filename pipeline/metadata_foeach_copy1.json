@@ -65,7 +65,7 @@
 		],
 		"variables": {
 			"File_list": {
-				"type": "Array"
+				"type": "String"
 			}
 		},
 		"annotations": []
