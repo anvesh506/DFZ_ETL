@@ -42,68 +42,33 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get Metadata1').output.childitems",
+						"value": "@activity('Get Metadata1').output.childItems",
 						"type": "Expression"
 					},
 					"isSequential": false,
 					"activities": [
 						{
-							"name": "variable_append",
+							"name": "Append variable1",
 							"type": "AppendVariable",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "File_list",
 								"value": {
-									"value": "@item().name",
+									"value": "@item().writeln(name[0].value)",
 									"type": "Expression"
 								}
 							}
 						}
 					]
 				}
-			},
-			{
-				"name": "Set variable1",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "ForEach1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "file_list2",
-					"value": {
-						"value": "@variables('File_list')",
-						"type": "Expression"
-					}
-				}
-			},
-			{
-				"name": "Append variable1",
-				"type": "AppendVariable",
-				"dependsOn": [
-					{
-						"activity": "Set variable1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "File_list",
-					"value": {
-						"value": "@variables('file_list2')",
-						"type": "Expression"
-					}
-				}
 			}
 		],
+		"parameters": {
+			"file_name": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"File_list": {
 				"type": "Array"
