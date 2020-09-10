@@ -1,5 +1,5 @@
 {
-	"name": "Json4",
+	"name": "weather_sink",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
