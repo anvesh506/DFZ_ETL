@@ -8,6 +8,10 @@
 		"parameters": {
 			"file_name": {
 				"type": "string"
+			},
+			"sheet_name": {
+				"type": "string",
+				"defaultValue": "'sheet1'"
 			}
 		},
 		"annotations": [],
