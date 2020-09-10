@@ -7,7 +7,8 @@
 		},
 		"parameters": {
 			"File_name": {
-				"type": "array"
+				"type": "string",
+				"defaultValue": "'bakery_file1.xlsx'"
 			},
 			"sheet_name": {
 				"type": "string",
