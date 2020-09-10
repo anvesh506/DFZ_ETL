@@ -49,12 +49,12 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['topping'][0]['id']"
+									"path": "$['coord']['lon']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['topping'][0]['type']"
+									"path": "$['coord']['lat']"
 								}
 							},
 							{
@@ -64,7 +64,112 @@
 							},
 							{
 								"source": {
-									"path": "['type']"
+									"path": "['main']"
+								}
+							},
+							{
+								"source": {
+									"path": "['description']"
+								}
+							},
+							{
+								"source": {
+									"path": "['icon']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['base']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['main']['temp']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['main']['feels_like']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['main']['temp_min']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['main']['temp_max']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['main']['pressure']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['main']['humidity']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['visibility']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['wind']['speed']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['wind']['deg']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['rain']['1h']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['clouds']['all']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['dt']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['sys']['type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['sys']['id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['sys']['country']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['sys']['sunrise']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['sys']['sunset']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['timezone']"
 								}
 							},
 							{
@@ -74,21 +179,16 @@
 							},
 							{
 								"source": {
-									"path": "$['type']"
-								}
-							},
-							{
-								"source": {
 									"path": "$['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['ppu']"
+									"path": "$['cod']"
 								}
 							}
 						],
-						"collectionReference": "$['batters']['batter']"
+						"collectionReference": "$['weather']"
 					}
 				},
 				"inputs": [
