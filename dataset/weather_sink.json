@@ -11,7 +11,6 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "Weather_hyd.json",
-				"folderPath": "weatherdata",
 				"container": "dfzgeneral2"
 			}
 		},
