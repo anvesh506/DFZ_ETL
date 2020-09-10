@@ -8,15 +8,15 @@
 		"parameters": {
 			"File_name": {
 				"type": "string",
-				"defaultValue": "'csvfiles/bakery_file1.xlsx'"
+				"defaultValue": "csvfiles/bakery_file1.xlsx"
 			},
 			"sheet_name": {
 				"type": "string",
-				"defaultValue": "'Sheet1'"
+				"defaultValue": "Sheet1"
 			},
 			"container_name": {
 				"type": "string",
-				"defaultValue": "'csvfiles'"
+				"defaultValue": "csvfiles"
 			}
 		},
 		"annotations": [],
@@ -33,7 +33,10 @@
 					"type": "Expression"
 				},
 				"folderPath": "''",
-				"container": "csvfiles"
+				"container": {
+					"value": "@dataset().container_name",
+					"type": "Expression"
+				}
 			},
 			"firstRowAsHeader": true
 		},
