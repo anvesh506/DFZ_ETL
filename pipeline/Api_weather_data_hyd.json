@@ -27,8 +27,7 @@
 					"source": {
 						"type": "JsonSource",
 						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true
+							"type": "HttpReadSettings"
 						},
 						"formatSettings": {
 							"type": "JsonReadSettings"
@@ -94,13 +93,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Bakery_dataset",
+						"referenceName": "Weather_dataset",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Json4",
+						"referenceName": "weather_sink",
 						"type": "DatasetReference"
 					}
 				]
