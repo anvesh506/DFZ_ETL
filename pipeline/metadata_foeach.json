@@ -113,7 +113,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"File_name": {
-											"value": "@variables('File_list')",
+											"value": "'bakery_file1.xlsx'",
 											"type": "Expression"
 										}
 									}
@@ -122,7 +122,10 @@
 							"outputs": [
 								{
 									"referenceName": "bakery_tgt_csv_conn",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"tgt_file_name": "'bakery_file1.csv'"
+									}
 								}
 							]
 						}
