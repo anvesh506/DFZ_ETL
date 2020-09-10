@@ -17,7 +17,11 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "xlsx_input_files",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"File_name": "''",
+							"sheet_name": "'Sheet1'"
+						}
 					},
 					"fieldList": [
 						"childItems"
@@ -122,7 +126,13 @@
 							"outputs": [
 								{
 									"referenceName": "bakery_tgt_csv_conn",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"tgt_file_name": {
+											"value": "@variables('File_list')",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
