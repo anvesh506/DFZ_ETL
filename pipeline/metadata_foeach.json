@@ -113,7 +113,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"File_name": {
-											"value": "@variables('File_list')",
+											"value": "@variables('File_list').value",
 											"type": "Expression"
 										}
 									}
@@ -125,7 +125,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"tgt_file_name": {
-											"value": "@variables('File_list')",
+											"value": "@variables('File_list').value",
 											"type": "Expression"
 										}
 									}
