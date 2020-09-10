@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "dataflow2",
+				"name": "json_to_csv",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
