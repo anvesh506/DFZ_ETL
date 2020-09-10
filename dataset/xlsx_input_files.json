@@ -8,7 +8,7 @@
 		"parameters": {
 			"File_name": {
 				"type": "string",
-				"defaultValue": "'bakery_file1.xlsx'"
+				"defaultValue": "'csvfiles/bakery_file1.xlsx'"
 			},
 			"sheet_name": {
 				"type": "string",
@@ -28,6 +28,7 @@
 					"value": "@dataset().File_name",
 					"type": "Expression"
 				},
+				"folderPath": "''",
 				"container": "csvfiles"
 			},
 			"firstRowAsHeader": true
