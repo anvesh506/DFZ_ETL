@@ -8,7 +8,7 @@
 		"parameters": {
 			"tgt_file_name": {
 				"type": "string",
-				"defaultValue": "'tgt_file'"
+				"defaultValue": "'bakery_file1.csv'"
 			}
 		},
 		"annotations": [],
