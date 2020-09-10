@@ -28,15 +28,8 @@
 			},
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().File_name",
-					"type": "Expression"
-				},
-				"folderPath": "''",
-				"container": {
-					"value": "@dataset().container_name",
-					"type": "Expression"
-				}
+				"fileName": "bakery_file1.xlsx",
+				"container": "csvfiles"
 			},
 			"firstRowAsHeader": true
 		},
