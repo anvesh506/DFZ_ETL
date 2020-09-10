@@ -10,57 +10,130 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Bakery.json",
+				"fileName": "Weather_hyd.json",
+				"folderPath": "weatherdata",
 				"container": "dfzgeneral2"
 			}
 		},
 		"schema": {
 			"type": "object",
 			"properties": {
-				"id": {
-					"type": "string"
-				},
-				"type": {
-					"type": "string"
-				},
-				"name": {
-					"type": "string"
-				},
-				"ppu": {
-					"type": "number"
-				},
-				"batters": {
+				"coord": {
 					"type": "object",
 					"properties": {
-						"batter": {
-							"type": "array",
-							"items": {
-								"type": "object",
-								"properties": {
-									"id": {
-										"type": "string"
-									},
-									"type": {
-										"type": "string"
-									}
-								}
-							}
+						"lon": {
+							"type": "number"
+						},
+						"lat": {
+							"type": "number"
 						}
 					}
 				},
-				"topping": {
+				"weather": {
 					"type": "array",
 					"items": {
 						"type": "object",
 						"properties": {
 							"id": {
+								"type": "integer"
+							},
+							"main": {
 								"type": "string"
 							},
-							"type": {
+							"description": {
+								"type": "string"
+							},
+							"icon": {
 								"type": "string"
 							}
 						}
 					}
+				},
+				"base": {
+					"type": "string"
+				},
+				"main": {
+					"type": "object",
+					"properties": {
+						"temp": {
+							"type": "number"
+						},
+						"feels_like": {
+							"type": "number"
+						},
+						"temp_min": {
+							"type": "number"
+						},
+						"temp_max": {
+							"type": "number"
+						},
+						"pressure": {
+							"type": "integer"
+						},
+						"humidity": {
+							"type": "integer"
+						}
+					}
+				},
+				"visibility": {
+					"type": "integer"
+				},
+				"wind": {
+					"type": "object",
+					"properties": {
+						"speed": {
+							"type": "number"
+						},
+						"deg": {
+							"type": "integer"
+						},
+						"gust": {
+							"type": "number"
+						}
+					}
+				},
+				"clouds": {
+					"type": "object",
+					"properties": {
+						"all": {
+							"type": "integer"
+						}
+					}
+				},
+				"dt": {
+					"type": "integer"
+				},
+				"sys": {
+					"type": "object",
+					"properties": {
+						"type": {
+							"type": "integer"
+						},
+						"id": {
+							"type": "integer"
+						},
+						"country": {
+							"type": "string"
+						},
+						"sunrise": {
+							"type": "integer"
+						},
+						"sunset": {
+							"type": "integer"
+						}
+					}
+				},
+				"timezone": {
+					"type": "integer"
+				},
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "string"
+				},
+				"cod": {
+					"type": "integer"
 				}
 			}
 		}
