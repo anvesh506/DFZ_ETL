@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "Bakery_sink",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
