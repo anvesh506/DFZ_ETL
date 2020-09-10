@@ -5,6 +5,11 @@
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"File_name": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
@@ -12,7 +17,8 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"container": "csvfiles"
-			}
+			},
+			"firstRowAsHeader": true
 		},
 		"schema": [
 			{
