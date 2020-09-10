@@ -54,7 +54,7 @@
 							"typeProperties": {
 								"variableName": "File_list",
 								"value": {
-									"value": "variables('File_list')",
+									"value": "@item()",
 									"type": "Expression"
 								}
 							}
