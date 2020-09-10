@@ -44,10 +44,10 @@
 						"value": "@activity('Get Metadata1').output.childitems",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
 					"activities": [
 						{
-							"name": "Append variable1",
+							"name": "variable_append",
 							"type": "AppendVariable",
 							"dependsOn": [],
 							"userProperties": [],
@@ -64,7 +64,7 @@
 							"type": "Copy",
 							"dependsOn": [
 								{
-									"activity": "Append variable1",
+									"activity": "variable_append",
 									"dependencyConditions": [
 										"Succeeded"
 									]
