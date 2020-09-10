@@ -7,7 +7,7 @@
 		},
 		"parameters": {
 			"File_name": {
-				"type": "string"
+				"type": "array"
 			},
 			"sheet_name": {
 				"type": "string",
