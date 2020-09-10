@@ -13,6 +13,10 @@
 			"sheet_name": {
 				"type": "string",
 				"defaultValue": "'Sheet1'"
+			},
+			"container_name": {
+				"type": "string",
+				"defaultValue": "'csvfiles'"
 			}
 		},
 		"annotations": [],
