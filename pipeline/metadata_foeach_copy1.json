@@ -55,7 +55,27 @@
 							"typeProperties": {
 								"variableName": "File_list",
 								"value": {
-									"value": "@item().writeln(name[0].value)",
+									"value": "@item().name",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Append variable1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "File_list",
+								"value": {
+									"value": "@item().value",
 									"type": "Expression"
 								}
 							}
